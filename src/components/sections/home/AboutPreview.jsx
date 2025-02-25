@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
+import heroimage from '../../../assets/hero/car_3-removebg.png'
 
 const AboutPreview = () => {
   const controls = useAnimation();
@@ -99,7 +100,7 @@ const AboutPreview = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-purple-100/30 to-blue-100/30 rounded-3xl"></div>
               <motion.img
-                src="/src/assets/hero/car_3-removebg.png"
+                src={heroimage}
                 alt="Corporate employees commuting together"
                 className="w-full h-full object-contain relative z-10"
                 animate={{

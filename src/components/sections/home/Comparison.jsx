@@ -1,6 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+import Affordable from '../../../assets/logo/c.svg';
+import Expensive from '../../../assets/hero/ola.png';
+import disadvantages from '../../../assets/hero/uber.png';
+import User from '../../../assets/hero/id.png';
 
 const Comparison = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -13,13 +17,13 @@ const Comparison = () => {
         heading: "Affordable",
         description: "Same Price. Everytime.\n\nOur Services start from very low prices.",
         highlight: "Starts at just ₹6/km",
-        logo: "/src/assets/logo/c.svg"
+        logo: Affordable
       },
       disadvantage: {
         heading: "Expensive",
         description: "Higher fares at peak times, straining your budget.\n\nDuring surge time, prices rise significantly.",
         highlight: "Up to 3x surge pricing",
-        logo: "/src/assets/hero/ola.png"
+        logo: Expensive
       }
     },
     {
@@ -28,13 +32,13 @@ const Comparison = () => {
         heading: "One-Time Registration",
         description: "Book one time and get cabs at your doorstep on time.",
         highlight: "Guaranteed on-time pickup",
-        logo: "/src/assets/logo/c.svg"
+        logo: Affordable
       },
       disadvantage: {
         heading: "Daily Booking Hassle",
         description: "Booking cabs daily is time consuming and have no punctuality",
         highlight: "Average 15min waiting time",
-        logo: "/src/assets/hero/uber.png"
+        logo: disadvantages
       }
     },
     {
@@ -43,13 +47,13 @@ const Comparison = () => {
         heading: "Safety Assurance",
         description: "Our drivers are verified and professionals. \n\n Enhanced security measures for women.",
         highlight: "100% verified drivers",
-        logo: "/src/assets/logo/c.svg"
+        logo: Affordable
       },
       disadvantage: {
         heading: "Unsafe",
         description: "No Security priviliges Drivers and passengers are not safe in a cab.",
         highlight: "Limited safety features",
-        logo: "/src/assets/hero/id.png"
+        logo: User
       }
     },
     {
@@ -58,13 +62,13 @@ const Comparison = () => {
         heading: "Door To Door",
         description: "We provide comfortable & luxurious rides directly at your doorstep",
         highlight: "Zero walking distance",
-        logo: "/src/assets/logo/c.svg"
+        logo: Affordable
       },
       disadvantage: {
         heading: "Long Walk",
         description: "Walk to meetup point for shuttles is tiring. \n\n Very tedious walk during monsoon times.",
         highlight: "15-20 min walk required",
-        logo: "/src/assets/hero/uber.png"
+        logo: disadvantages
       }
     }
   ];
@@ -240,4 +244,4 @@ const Comparison = () => {
   );
 };
 
-export default Comparison; 
+export default Comparison;
