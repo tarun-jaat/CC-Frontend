@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import service from "../../../assets/services/file.png";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -55,7 +56,7 @@ const HeroSection = () => {
             className="relative"
           >
             <img
-              src="/src/assets/services/file.png"
+              src={service}
               alt="Corporate Commute"
               className="w-full h-auto max-w-2xl mx-auto scale-110"
             />

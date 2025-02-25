@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import About from '../../../assets/aboutus/imgonline-com-ua-ReplaceColor-3otGGNG2gLokrTK2.png';
 
 const AboutHero = () => {
   const [ref, inView] = useInView({
@@ -47,7 +48,7 @@ const AboutHero = () => {
           <motion.div variants={itemVariants} className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="/src/assets/aboutus/imgonline-com-ua-ReplaceColor-3otGGNG2gLokrTK2.png"
+                src={About}
                 alt="Corporate Cruise Team"
                 className="w-full h-full object-cover"
               />
