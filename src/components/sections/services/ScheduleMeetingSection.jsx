@@ -83,7 +83,7 @@ const ScheduleMeetingSection = () => {
     };
 
     try {
-      const response = await fetch('https://cc-backend-lhb2.onrender.com/api/schedule-meeting', {
+      const response = await fetch('https://api.corporatecruise.in/api/schedule-meeting', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
