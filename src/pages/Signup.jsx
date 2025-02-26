@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef, lazy } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiUser, FiPhone, FiMapPin, FiInfo, FiClock, FiDollarSign, FiSmile } from 'react-icons/fi';
+import { FiUser, FiPhone, FiMapPin, FiInfo, FiClock, FiDollarSign, FiSmile, FiMail } from 'react-icons/fi';
 import animation from '../assets/referalAnimation2.mp4';
-import { GoogleMap, useJsApiLoader, StandaloneSearchBox } from '@react-google-maps/api'
+import { useJsApiLoader, StandaloneSearchBox } from '@react-google-maps/api'
 import {toast} from 'react-hot-toast';
 
 const libraries = ['places'];
@@ -147,18 +147,18 @@ const Signup = () => {
             </motion.div>
           </div>
 
-          <div className="relative md:h-96 h-auto rounded-2xl overflow-hidden shadow-xl bg-white pb-1 md:m-0 -m-10">
+          <div className="relative md:h-96 h-48 rounded-2xl overflow-hidden shadow-xl bg-white pb-1 md:m-0 mx-0">
             <video
-              className="w-full md:h-full object-cover object-center "
+              className="w-full h-full object-cover object-center"
               autoPlay
               loop
               muted
               controls={false}
               loading="lazy"
-              playsInline
               poster="https://corporatecruise.in/placeholder-video.jpg"
             >
               <source src={animation} type="video/mp4" />
+              Your browser does not support the video tag.
             </video>
           </div>
         </motion.div>
@@ -209,7 +209,7 @@ const Signup = () => {
 
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FiUser className="w-5 h-5 text-gray-400" />
+                  <FiMail className="w-5 h-5 text-gray-400" />
                 </div>
                 <input
                   type="email"
@@ -236,7 +236,7 @@ const Signup = () => {
                       type="text"
                       name="pickupLocation"
                       required
-                      placeholder="Home/Office Pickup"
+                      placeholder="Enter Pickup Location"
                       className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
                       value={formData.pickupLocation}
                       onChange={(e) => setFormData({...formData, pickupLocation: e.target.value})}
@@ -258,7 +258,7 @@ const Signup = () => {
                       type="text"
                       name="dropLocation"
                       required
-                      placeholder="Workplace Drop-off"
+                      placeholder="Enter Drop Location"
                       className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
                       value={formData.dropLocation}
                       onChange={(e) => setFormData({...formData, dropLocation: e.target.value})}
@@ -274,7 +274,7 @@ const Signup = () => {
                 <input
                   type="text"
                   name="referralId"
-                  placeholder="Friend's Referral Code (Optional)"
+                  placeholder="Referral Id (if any)"
                   className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
                   value={formData.referralId}
                   onChange={(e) => setFormData({...formData, referralId: e.target.value})}

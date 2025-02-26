@@ -155,7 +155,7 @@ const Dashboard = () => {
                 </p>
                 <p className="text-gray-600">Current Reward Level</p>
               </div> */}
-            <video className="max-h-80 w-full" autoPlay loop muted>
+            <video className="max-h-80 w-full" autoPlay loop muted playsInline controls={false}>
               <source src={animation} type="video/mp4" />
             </video>
           </div>
