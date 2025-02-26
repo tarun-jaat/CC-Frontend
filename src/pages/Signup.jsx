@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiUser, FiPhone, FiMapPin, FiInfo, FiClock, FiDollarSign, FiSmile, FiMail } from 'react-icons/fi';
-import animation from '../assets/referalAnimation2.mp4';
+// import animation from '../assets/referalAnimation2.mp4';
 import { useJsApiLoader, StandaloneSearchBox } from '@react-google-maps/api'
 import {toast} from 'react-hot-toast';
+import animation from '../assets/ra2.json';
+import Lottie from 'lottie-react';
 
 const libraries = ['places'];
 
@@ -148,7 +150,7 @@ const Signup = () => {
           </div>
 
           <div className="relative md:h-96 h-48 rounded-2xl overflow-hidden shadow-xl bg-white pb-1 md:m-0 mx-0">
-            <video
+            {/* <video
               className="w-full h-full object-cover object-center"
               autoPlay
               loop
@@ -159,7 +161,8 @@ const Signup = () => {
             >
               <source src={animation} type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
+            <Lottie animationData={animation} loop={true} className="w-full h-full scale-105"/>
           </div>
         </motion.div>
 
