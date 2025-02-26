@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-
+import drive from '../../../assets/services/s5.png';  
 const DriveWithUs = () => {
   return (
     <section className="py-16 bg-white">
@@ -14,7 +14,7 @@ const DriveWithUs = () => {
             className="relative"
           >
             <img
-              src="/src/assets/services/s5.png"
+              src={drive}
               alt="Happy Driver"
               className="rounded-2xl shadow-xl md:w-3/4"
             />

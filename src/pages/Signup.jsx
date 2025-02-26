@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FiUser, FiPhone, FiMapPin, FiCheckCircle } from 'react-icons/fi';
 import Lottie from 'lottie-react';
 import animationData from '../assets/data.json';
-import animation from '../assets/referalAnimation.mp4';
+import animation from '../assets/referalAnimation2.mp4';
 import { GoogleMap, useJsApiLoader, StandaloneSearchBox } from '@react-google-maps/api'
 import {toast} from 'react-hot-toast';
 
@@ -36,16 +36,16 @@ const Signup = () => {
     if (places.length === 0) return;
 
     const place = places[0];
-    const location = place.geometry.location;
-    const bounds = new window.google.maps.LatLngBounds(
-      new window.google.maps.LatLng(28.412593, 76.838064), 
-      new window.google.maps.LatLng(28.881338, 77.321785) 
-    );
+    // const location = place.geometry.location;
+    // const bounds = new window.google.maps.LatLngBounds(
+    //   new window.google.maps.LatLng(28.412593, 76.838064), 
+    //   new window.google.maps.LatLng(28.881338, 77.321785) 
+    // );
 
-    if (!bounds.contains(location)) {
-      setError('Selected location must be within the Delhi NCR area.');
-      return;
-    }
+    // if (!bounds.contains(location)) {
+    //   setError('Selected location must be within the Delhi NCR area.');
+    //   return;
+    // }
 
     setFormData(prev => ({ ...prev, [field]: place.formatted_address }));
   };
@@ -108,7 +108,7 @@ const Signup = () => {
               animate={{ scale: 1, opacity: 1 }}
               className="w-full max-w-lg"
             >
-              <video className="h-80 w-full" autoPlay loop muted>
+              <video className="h-80 border-none w-full aspect-square object-cover" autoPlay loop muted>
                 <source src={animation} type="video/mp4" />
               </video>
             </motion.div>

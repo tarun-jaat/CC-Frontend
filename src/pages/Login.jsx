@@ -17,16 +17,16 @@ const Login = () => {
 
   const [deviceInfo, setDeviceInfo] = useState({});
 
-  useEffect(() => {
-    const getDeviceInfo = () => {
-      const userAgent = navigator.userAgent;
-      const browserName = navigator.appName;
-      const platform = navigator.platform;
-      setDeviceInfo({ userAgent, browserName, platform });
-    };
+  // useEffect(() => {
+  //   const getDeviceInfo = () => {
+  //     const userAgent = navigator.userAgent;
+  //     const browserName = navigator.appName;
+  //     const platform = navigator.platform;
+  //     setDeviceInfo({ userAgent, browserName, platform });
+  //   };
 
-    getDeviceInfo();
-  }, []);
+  //   getDeviceInfo();
+  // }, []);
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -88,7 +88,7 @@ const Login = () => {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Invalid OTP');
       dispatch(setUser({ user: data.userData, token: data.token }));
-      navigate(`/dashboard/${data.userData.name}?${JSON.stringify(deviceInfo)}`);
+      navigate(`/dashboard/${data.userData.name}`);
     } catch (err) {
       setError(err.message);
     } finally {
