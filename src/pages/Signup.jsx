@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, lazy } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiUser, FiPhone, FiMapPin, FiCheckCircle } from 'react-icons/fi';
-import Lottie from 'lottie-react';
-import animationData from '../assets/data.json';
+import { FiUser, FiPhone, FiMapPin, FiInfo, FiClock, FiDollarSign, FiSmile } from 'react-icons/fi';
 import animation from '../assets/referalAnimation2.mp4';
 import { GoogleMap, useJsApiLoader, StandaloneSearchBox } from '@react-google-maps/api'
 import {toast} from 'react-hot-toast';
@@ -91,113 +89,144 @@ const Signup = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-screen h-auto gradient py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center"
+      className="min-h-screen bg-gradient-to-br from-gray-50 to-indigo-50 py-12 px-4 mt-10 sm:px-6 lg:px-8 flex items-center justify-center"
     >
-      <div className="w-full h-auto md:max-w-[80%] mx-auto overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-50  rounded-2xl mt-10 flex items-center justify-center md:flex-row flex-col-reverse">
+      <div className="w-full max-w-7xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col-reverse md:flex-row">
+        {/* Left Section */}
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          className="p-4 md:space-y-8 bg-gradient-to-br from-blue-100 to-indigo-50 md:w-[60%] text-center lg:text-left"
+          className="md:w-3/5 bg-gradient-to-br from-indigo-600 to-blue-500 p-12 text-white"
         >
-          <div className="relative h-96  w-full flex items-center justify-center">
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold mb-4">Join 10,000+ Commuters Enjoying Stress-Free Rides</h2>
+            <p className="text-lg opacity-90">Your daily commute, reimagined with comfort and reliability</p>
+          </div>
+
+          <div className="space-y-8 mb-12">
             <motion.div 
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              className="w-full max-w-lg"
+              whileHover={{ x: 10 }}
+              className="flex items-center gap-6"
             >
-              <video className="h-80 border-none w-full aspect-square object-cover" autoPlay loop muted>
-                <source src={animation} type="video/mp4" />
-              </video>
+              <div className="p-4 bg-white/10 rounded-xl">
+                <FiClock className="w-8 h-8 text-blue-200" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Guaranteed On-Time Pickups</h3>
+                <p className="opacity-90">Never worry about late arrivals with our 99.9% punctuality rate</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ x: 10 }}
+              className="flex items-center gap-6"
+            >
+              <div className="p-4 bg-white/10 rounded-xl">
+                <FiDollarSign className="w-8 h-8 text-blue-200" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Fixed Monthly Pricing</h3>
+                <p className="opacity-90">No surge pricing - know exactly what you'll pay each month</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ x: 10 }}
+              className="flex items-center gap-6"
+            >
+              <div className="p-4 bg-white/10 rounded-xl">
+                <FiSmile className="w-8 h-8 text-blue-200" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Premium Comfort</h3>
+                <p className="opacity-90">AC vehicles with dedicated seating and professional drivers</p>
+              </div>
             </motion.div>
           </div>
-          
-          <div className="space-y-4">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-              Why Join Corporate Cruise?
-            </h2>
-            <ul className="space-y-3 text-gray-600 text-lg">
-              <li className="flex items-center gap-2">
-                <FiCheckCircle className="text-green-500" />
-                <span>Guaranteed on-time pickups</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <FiCheckCircle className="text-green-500" />
-                <span>Fixed monthly pricing</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <FiCheckCircle className="text-green-500" />
-                <span>24/7 customer support</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <FiCheckCircle className="text-green-500" />
-                <span>Earn free rides with referrals</span>
-              </li>
-            </ul>
+
+          <div className="relative md:h-96 h-auto rounded-2xl overflow-hidden shadow-xl bg-white pb-1 md:m-0 -m-10">
+            <video
+              className="w-full md:h-full object-cover object-center "
+              autoPlay
+              loop
+              muted
+              controls={false}
+              loading="lazy"
+              playsInline
+              poster="https://corporatecruise.in/placeholder-video.jpg"
+            >
+              <source src={animation} type="video/mp4" />
+            </video>
           </div>
         </motion.div>
 
+        {/* Right Section - Form */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="bg-white md:w-[40%]  h-full p-4 md:p-8 space-y-8"
+          className="md:w-2/5 p-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Create Your Passenger Account
-          </h2>
-          
-          {error && (
-            <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-lg">
-              {error}
-            </div>
-          )}
-          
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="text-center mb-10">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Start Your Premium Commute</h1>
+            <p className="text-gray-500">Create account in 30 seconds</p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-4">
               <div className="relative">
-                <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiUser className="w-5 h-5 text-gray-400" />
+                </div>
                 <input
                   type="text"
                   name="name"
                   required
                   placeholder="Full Name"
-                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:border-primary focus:ring-primary"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                 />
               </div>
 
               <div className="relative">
-                <FiPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiPhone className="w-5 h-5 text-gray-400" />
+                </div>
                 <input
                   type="tel"
                   name="phone"
                   required
                   pattern="[0-9]{10}"
-                  placeholder="Phone Number"
-                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:border-primary focus:ring-primary"
+                  placeholder="Mobile Number"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
                 />
               </div>
 
               <div className="relative">
-                <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiUser className="w-5 h-5 text-gray-400" />
+                </div>
                 <input
                   type="email"
                   name="email"
                   required
                   placeholder="Email Address"
-                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:border-primary focus:ring-primary"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                 />
               </div>
 
+              {/* Keep the Google Maps components the same, just update styling */}
               <div className="relative">
-                <FiMapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiMapPin className="w-5 h-5 text-gray-400" />
+                </div>
                 {isLoaded && (
                   <StandaloneSearchBox
                     onLoad={onLoadPickup}
@@ -207,8 +236,8 @@ const Signup = () => {
                       type="text"
                       name="pickupLocation"
                       required
-                      placeholder="Primary Pickup Location"
-                      className="w-full pl-10 pr-4 py-3 border rounded-lg focus:border-primary focus:ring-primary"
+                      placeholder="Home/Office Pickup"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
                       value={formData.pickupLocation}
                       onChange={(e) => setFormData({...formData, pickupLocation: e.target.value})}
                     />
@@ -217,7 +246,9 @@ const Signup = () => {
               </div>
 
               <div className="relative">
-                <FiMapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiMapPin className="w-5 h-5 text-gray-400" />
+                </div>
                 {isLoaded && (
                   <StandaloneSearchBox
                     onLoad={onLoadDrop}
@@ -227,8 +258,8 @@ const Signup = () => {
                       type="text"
                       name="dropLocation"
                       required
-                      placeholder="Primary Drop Location"
-                      className="w-full pl-10 pr-4 py-3 border rounded-lg focus:border-primary focus:ring-primary"
+                      placeholder="Workplace Drop-off"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
                       value={formData.dropLocation}
                       onChange={(e) => setFormData({...formData, dropLocation: e.target.value})}
                     />
@@ -237,30 +268,35 @@ const Signup = () => {
               </div>
 
               <div className="relative">
-                <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiUser className="w-5 h-5 text-gray-400" />
+                </div>
                 <input
                   type="text"
                   name="referralId"
-                  placeholder="Referral ID (optional)"
-                  className="w-full pl-10 pr-4 py-3 border rounded-lg focus:border-primary focus:ring-primary"
+                  placeholder="Friend's Referral Code (Optional)"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
                   value={formData.referralId}
                   onChange={(e) => setFormData({...formData, referralId: e.target.value})}
                 />
               </div>
             </div>
-            
+
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full bg-primary text-white py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
+              className="w-full bg-gradient-to-r from-indigo-600 to-blue-500 text-white py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
             >
-              Create Account
+              Get Started →
             </motion.button>
-            <p className="text-yellow-500 p-2 rounded-md bg-yellow-100 text-sm">
-            ⚠️Currently we are providing services in Delhi NCR only.
-              We are expanding our services to other cities soon.
-            </p>
+
+            <div className="mt-6 p-3 bg-yellow-100 rounded-lg flex items-center gap-3">
+              <FiInfo className="w-5 h-5 text-yellow-500" />
+              <p className="text-sm text-yellow-500">
+                Currently serving Delhi NCR region. Expanding to new cities soon!
+              </p>
+            </div>
           </form>
         </motion.div>
       </div>
