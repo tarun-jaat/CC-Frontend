@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { FiShare2, FiUserPlus, FiAward, FiStar } from "react-icons/fi";
 import { LogOut } from "lucide-react";
 import { logout } from "../store/userSlice";
-import animation from "../assets/referalAnimation.mp4";
+import animation from "../assets/final.mp4";
 import toast from "react-hot-toast";
 import {
   WhatsappShareButton,

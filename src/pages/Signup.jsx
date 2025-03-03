@@ -5,7 +5,7 @@ import { FiUser, FiPhone, FiMapPin, FiInfo, FiClock, FiDollarSign, FiSmile, FiMa
 // import animation from '../assets/referalAnimation2.mp4';
 import { useJsApiLoader, StandaloneSearchBox } from '@react-google-maps/api'
 import {toast} from 'react-hot-toast';
-import animation from '../assets/ra2.json';
+import animation from '../assets/final.mp4';
 import Lottie from 'lottie-react';
 
 const libraries = ['places'];
@@ -162,7 +162,10 @@ const Signup = () => {
               <source src={animation} type="video/mp4" />
               Your browser does not support the video tag.
             </video> */}
-            <Lottie animationData={animation} loop={true} className="w-full h-full scale-105"/>
+            {/* <Lottie animationData={animation} loop={true} className="w-full h-full scale-105"/> */}
+            <video className="max-h-80 w-full" autoPlay loop muted playsInline controls={false}>
+              <source src={animation} type="video/mp4" />
+            </video>
           </div>
         </motion.div>
 
