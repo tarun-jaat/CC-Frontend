@@ -28,7 +28,7 @@ const Footer = () => {
                 </span>
               </h2>
               <p className="text-lg md:text-xl mt-4 opacity-90 leading-relaxed">
-                Join <span className="text-cyan-400 font-medium">5000+ satisfied customers</span> who solved their
+                Join <span className="text-cyan-400 font-medium">2100+ satisfied customers</span> who solved their
                 commute problems with us.
               </p>
             </div>
@@ -92,7 +92,7 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6">
             <p className="text-center md:text-left text-sm opacity-80">
-              © 2024 DIXSIN CABS PVT LTD. All rights reserved.
+              © 2025 DIXSIN CABS PVT LTD. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <span className="text-cyan-400 text-sm">CONNECT WITH US:</span>

@@ -114,15 +114,12 @@ const Dashboard = () => {
 
                 <div className="h-5 mt-1 w-full bg-gray-200 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500"
+                    className="h-full bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500 relative flex items-center justify-center"
                     style={{
                       width: `${(totalEarnedKM / 250) * 100}%`,
                     }}
                   >
-                    {" "}
-                    <p className="text-center text-white">
-                      {totalEarnedKM}/250
-                    </p>
+                    <p className="text-white text-base font-bold">{totalEarnedKM}/250</p>
                   </div>
                 </div>
               </div>

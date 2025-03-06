@@ -66,9 +66,9 @@ const StatsSection = () => {
           viewport={{ once: true }}
           className="grid md:grid-cols-3 gap-8 relative"
         >
-          <StatItem number={400} label="Timely Rides" />
-          <StatItem number={120} label="Trusted Drivers" />
-          <StatItem number={300} label="Happy Customers" />
+          <StatItem number={840} label="Timely Rides" />
+          <StatItem number={500} label="Trusted Drivers" />
+          <StatItem number={2100} label="Happy Customers" />
         </motion.div>
       </div>
     </section>

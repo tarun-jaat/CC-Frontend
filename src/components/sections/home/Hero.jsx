@@ -2,7 +2,7 @@ import { motion, useScroll } from 'framer-motion';
 import { useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import heroImage from '../../../assets/hero/3D_model-removebg-preview.png';
+import heroImage from '../../../assets/hero/hero.png';
 
 const Hero = () => {
   const [showScroll, setShowScroll] = useState(true);
@@ -137,7 +137,7 @@ const Hero = () => {
             <img
             src={heroImage}
               alt="Hero Illustration"
-              className="w-full h-auto scale-125 lg:scale-120 object-contain"
+              className="w-full h-auto lg:scale-110 object-contain"
             />
           </motion.div>
         </motion.div>

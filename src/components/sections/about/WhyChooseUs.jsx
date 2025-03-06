@@ -63,7 +63,7 @@ const WhyChooseUs = () => {
             >
               <div className="flex items-start space-x-6">
                 <div className="flex-1">
-                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-blue-500">
+                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-[#1791c8]">
                     {benefit.icon}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>

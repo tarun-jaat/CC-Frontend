@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiPhone, FiMail, FiCheckCircle, FiLock } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
@@ -27,7 +27,6 @@ const Login = () => {
 
   //   getDeviceInfo();
   // }, []);
-
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
